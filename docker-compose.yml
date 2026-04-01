@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dropshipping-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:///./data/dropshipping.db
+      - LOG_LEVEL=INFO
+      - MOCK_MODE=true
+    volumes:
+      - ./data:/app/data
+      - ./backend:/app/backend
+    command: uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      - init-db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: dropshipping-frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://api:8000
+    depends_on:
+      - api
+
+  init-db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dropshipping-init
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:///./data/dropshipping.db
+      - LOG_LEVEL=INFO
+      - MOCK_MODE=true
+    volumes:
+      - ./data:/app/data
+    command: python -c "import asyncio; from backend.models.database import init_db; asyncio.run(init_db('sqlite+aiosqlite:///./data/dropshipping.db'))"
+    profiles:
+      - init
+
+networks:
+  default:
+    name: dropshipping-network
