@@ -690,52 +690,51 @@ pytest tests/test_product_research.py -v
 
 ## 🚢 Deployment
 
-### One-Click Deploy to Cloud
+### 🚀 Deploy NOW - One Click!
 
-[![Deploy to Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/logeshkannan19/DropAgent)
-
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/logeshkannan19/DropAgent)
-
-[![Deploy to Fly.io](https://img.shields.io/badge/Fly.io-Deploy-blue.svg)](https://fly.io/launch)
+| Platform | Click to Deploy | Status |
+|----------|----------------|--------|
+| **Render** (Recommended) | 👉 [Deploy to Render](https://render.com/deploy?repo=https://github.com/logeshkannan19/DropAgent) | Free Tier |
+| **Railway** | 👉 [Deploy to Railway](https://railway.app/new/template?template=https://github.com/logeshkannan19/DropAgent) | Free Tier |
 
 ---
 
-### Cloud Platform Deployment
+### Render Deployment (Step by Step)
 
-#### Railway (Recommended - Free Tier)
+1. **Click this link:** 👉 https://render.com/deploy?repo=https://github.com/logeshkannan19/DropAgent
 
-1. Go to [Railway.app](https://railway.app)
-2. Click "New Project" → "Deploy from GitHub"
-3. Select `DropAgent` repository
-4. Railway auto-detects Python
-5. Add environment variables (optional)
-6. Click "Deploy Now"
+2. **Login with GitHub** if prompted
 
-**Live URL:** `https://dropshipping-ai-agent.up.railway.app`
+3. **Configure your service:**
+   ```
+   Name: dropshipping-api
+   Region: Singapore
+   Branch: main
+   Environment: Python 3.11
+   Build Command: pip install -r requirements.txt
+   Start Command: uvicorn backend.api.main:app --host 0.0.0.0 --port $PORT
+   ```
 
-#### Render (Free Tier)
+4. **Click "Create Web Service"**
 
-1. Go to [Render.com](https://render.com)
-2. Click "New" → "Web Service"
-3. Connect GitHub repo
-4. Settings:
-   - Build Command: `pip install -r requirements.txt`
-   - Start Command: `uvicorn backend.api.main:app --host 0.0.0.0 --port $PORT`
-5. Click "Create Web Service"
+5. **Wait 2-3 minutes** for deployment
 
-#### Fly.io (Free Tier)
+6. **Get your live URL!**
+   ```
+   https://dropshipping-api.onrender.com/docs
+   ```
 
-```bash
-# Install flyctl
-curl -L https://fly.io/install.sh | sh
+---
 
-# Launch app
-fly launch --image python:3.11-slim
+### Railway Deployment
 
-# Deploy
-fly deploy
-fly apps open
-```
+1. **Click:** 👉 https://railway.app/new/template?template=https://github.com/logeshkannan19/DropAgent
+
+2. **Login with GitHub**
+
+3. **Click "Deploy Now"**
+
+4. **Get your URL:** `https://dropshipping-ai-agent.up.railway.app`
 
 ---
 
