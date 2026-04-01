@@ -18,25 +18,27 @@
 
 ## 🎥 Demo Video
 
-[![DropShipping AI Agent Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+> Demo video coming soon! 
 
-*Click to watch the full demo video*
+*Run locally or deploy to see the full functionality*
 
 ---
 
 ## 📸 Screenshots
 
 ### Dashboard Overview
-![Dashboard](screenshots/dashboard.png)
+> Real-time business metrics, revenue tracking, and product management
 
 ### AI Agent Pipeline
-![Agent Pipeline](screenshots/agent-pipeline.png)
+> Visual pipeline showing: Research → Analyze → Select → Price → Publish
 
 ### Product Analytics
-![Analytics](screenshots/analytics.png)
+> Revenue charts, top products, and category performance
 
 ### API Documentation
-![API Docs](screenshots/api-docs.png)
+> Interactive Swagger UI with all endpoints
+
+*(Screenshots coming soon - Run locally or deploy to see the UI)*
 
 ---
 
